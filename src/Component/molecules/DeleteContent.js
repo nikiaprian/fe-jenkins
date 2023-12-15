@@ -24,7 +24,7 @@ function DeleteContent(props) {
   const handleDelete = async () => {
     if (props.type === "deleteForum" && state?.user?.id === +idUser) {
       await axios
-        .delete(`http://35.78.193.13:9090/forums/${state?.id}`, {
+        .delete(`http://52.11.90.192:9090/forums/${state?.id}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${key}`,
@@ -44,7 +44,7 @@ function DeleteContent(props) {
         });
     } else if (props?.type === "deleteBlog" && state?.user?.id === +idUser) {
       await axios
-        .delete(`http://35.78.193.13:9090/blogs/${state?.id}`, {
+        .delete(`http://52.11.90.192:9090/blogs/${state?.id}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${key}`,
