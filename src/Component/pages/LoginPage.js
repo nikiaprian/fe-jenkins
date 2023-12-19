@@ -11,7 +11,7 @@ import validator from "validator";
 import useAuthStore from "../store/AuthStore";
 
 const LoginPage = () => {
-  const baseUrl = "http://52.11.90.192:9090/auth/login";
+  const baseUrl = "http://52.25.177.66:9090/auth/login";
   const [login, setLogin] = useState({ email: "", password: "" });
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
@@ -121,7 +121,7 @@ const LoginPage = () => {
             </div>
           </form>
           <Link to="/auth/google/callback">
-            <button onClick={() => (window.location = "http://52.11.90.192:9090/auth/login/google")} className="py-3 px-3 mt-8 mb-4 w-full justify-center rounded-2xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200 flex">
+            <button onClick={() => (window.location = "http://52.25.177.66:9090/auth/login/google")} className="py-3 px-3 mt-8 mb-4 w-full justify-center rounded-2xl bg-blue-50 hover:bg-blue-100 focus:bg-blue-100 active:bg-blue-200 flex">
               <div className="flex gap-4 justify-center max-w-sm ">
                 <img src={google} className="w-5 " alt="google" />
                 <span className="block w-max font-medium tracking-wide text-sm text-blue-700">with Google</span>

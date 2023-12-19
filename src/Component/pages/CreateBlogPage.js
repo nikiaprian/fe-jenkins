@@ -31,7 +31,7 @@ function CreateBlogPage() {
     inputTag.forEach((tag) => data.append("tags", tag?.text));
 
     await axios
-      .post("http://52.11.90.192:9090/blogs/new", data, {
+      .post("http://52.25.177.66:9090/blogs/new", data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
