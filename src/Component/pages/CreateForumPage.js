@@ -26,7 +26,7 @@ function CreateForumPage() {
     inputTag.forEach((tag) => data.append("tags", tag?.text));
 
     await axios
-      .post("http://52.25.177.66:9090/forums/new", data, {
+      .post("http://35.86.108.96:9090/forums/new", data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
