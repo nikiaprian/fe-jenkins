@@ -27,9 +27,9 @@
     "zustand": "^4.0.0-rc.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "GENERATE_SOURCEMAP=false react-scripts start",
     "css": "tailwindcss -i ./src/index.css -o ./src/output.css --watch",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
