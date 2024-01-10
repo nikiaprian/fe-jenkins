@@ -27,6 +27,6 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
-        docker build -t your-image-name -f path/to/your/Dockerfile .
+        docker build -t nikiaprian/frontend:latest .
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-        docker push your-image-name
+        docker push nikiaprian/frontend:latest
