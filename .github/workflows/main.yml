@@ -48,5 +48,5 @@ jobs:
       env:
         LAMBDA_FUNCTION_NAME: ${{ secrets.LAMBDA_FUNCTION_NAME }}
       run: |
-        aws lambda invoke --function-name $LAMBDA_FUNCTION_NAME --payload '{}' output.txt
+        aws lambda invoke --function-name $LAMBDA_FUNCTION_NAME --payload '{}' output.txt --cli-read-timeout 300
         cat output.txt
