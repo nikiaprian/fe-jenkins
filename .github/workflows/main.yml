@@ -22,13 +22,6 @@ jobs:
     - name: Push to Docker Hub
       run: docker push nikiaprian/frontend:latest
 
-  deploy-lambda:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
