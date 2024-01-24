@@ -17,7 +17,7 @@ function CheckedCard(props) {
     console.log(checked);
     await axios
       .patch(
-        `http://54.218.69.136:9090/forum/comment/${props?.id}/selected-answer`,
+        `http://54.201.2.57:9090/forum/comment/${props?.id}/selected-answer`,
         { is_answer: checked },
         {
           headers: {
