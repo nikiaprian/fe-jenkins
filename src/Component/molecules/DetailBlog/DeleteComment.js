@@ -17,7 +17,7 @@ function DeleteComment(props) {
   const handleDelete = async () => {
     if (state?.userId === +idUser) {
       await axios
-        .delete(`http://34.216.72.81:9090/comments/${state?.id}`, {
+        .delete(`http://54.190.41.255:9090/comments/${state?.id}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${key}`,
