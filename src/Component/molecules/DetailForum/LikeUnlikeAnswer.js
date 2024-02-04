@@ -13,7 +13,7 @@ function LikeUnlikeAnswer(props) {
   const handleLike = async () => {
     if (state?.status_like) {
       await axios
-        .delete(`http://18.237.44.51:9090/like/forum/comment/${state?.id}`, {
+        .delete(`http://34.211.113.235:9090/like/forum/comment/${state?.id}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${key}`,
@@ -32,7 +32,7 @@ function LikeUnlikeAnswer(props) {
     } else {
       await axios
         .post(
-          `http://18.237.44.51:9090/like/forum/comment/${state?.id}`,
+          `http://34.211.113.235:9090/like/forum/comment/${state?.id}`,
           {},
           {
             headers: {
