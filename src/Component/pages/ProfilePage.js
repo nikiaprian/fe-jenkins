@@ -30,7 +30,7 @@ function ProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get("http://54.190.41.255:9090/user/profile", {
+        .get("http://18.237.44.51:9090/user/profile", {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
@@ -44,8 +44,8 @@ function ProfilePage() {
           console.log(e);
         });
     };
-    fetchBlogs("http://54.190.41.255:9090/blogs", token);
-    fetchForums("http://54.190.41.255:9090/forums", token);
+    fetchBlogs("http://18.237.44.51:9090/blogs", token);
+    fetchForums("http://18.237.44.51:9090/forums", token);
     fetchData();
   }, [token, fetchBlogs, fetchForums]);
 
@@ -77,7 +77,7 @@ function ProfilePage() {
     data.append("username", profile?.username);
 
     await axios
-      .patch("http://54.190.41.255:9090/user/update-profile", data, {
+      .patch("http://18.237.44.51:9090/user/update-profile", data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,

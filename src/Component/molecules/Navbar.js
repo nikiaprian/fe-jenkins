@@ -29,7 +29,7 @@ function Navbar() {
     if (key != null) {
       const getApiUser = async () => {
         await axios
-          .get("http://54.190.41.255:9090/user/profile", {
+          .get("http://18.237.44.51:9090/user/profile", {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${key}`,

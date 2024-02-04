@@ -11,7 +11,7 @@ function GoogleAuthCallback() {
   useEffect(() => {
     const { search } = location;
     axios
-      .get(`http://54.190.41.255:9090/auth/callback/google${search}`, {
+      .get(`http://18.237.44.51:9090/auth/callback/google${search}`, {
         withCredentials: false,
       })
       .then((res) => {
