@@ -11,7 +11,7 @@ function BlogPage() {
   const key = window.localStorage.getItem("ACCESS_KEY");
   const fetchBlogs = useBlogStore((state) => state.fetchBlogs);
   useEffect(() => {
-    fetchBlogs("http://54.212.108.246:9090/blogs", key);
+    fetchBlogs("http://10.10.3.5:9090/blogs", key);
   }, [fetchBlogs, key]);
   return (
     <>

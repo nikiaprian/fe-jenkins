@@ -9,7 +9,7 @@ import validator from "validator";
 import Swal from "sweetalert2";
 //import useAuthStore from "../store/AuthStore";
 const RegisterPage = (props) => {
-  const baseUrl = "http://54.212.108.246:9090/auth/register";
+  const baseUrl = "http://10.10.3.5:9090/auth/register";
   const navigate = useNavigate();
   const [register, setRegister] = useState({
     email: "",
