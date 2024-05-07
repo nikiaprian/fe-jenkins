@@ -43,9 +43,9 @@ jobs:
     - name: Install Dependencies
       run: sudo apt-get install -y --fix-missing python3-pil
 
-    - name: Execute Lambda Function
-      env:
-        LAMBDA_FUNCTION_NAME: ${{ secrets.LAMBDA_FUNCTION_NAME }}
-      run: |
-        aws lambda invoke --function-name $LAMBDA_FUNCTION_NAME --payload '{}' output.txt --cli-read-timeout 300
-        cat output.txt
+    # - name: Execute Lambda Function
+    #   env:
+    #     LAMBDA_FUNCTION_NAME: ${{ secrets.LAMBDA_FUNCTION_NAME }}
+    #   run: |
+    #     aws lambda invoke --function-name $LAMBDA_FUNCTION_NAME --payload '{}' output.txt --cli-read-timeout 300
+    #     cat output.txt
