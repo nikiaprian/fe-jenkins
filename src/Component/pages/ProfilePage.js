@@ -30,7 +30,7 @@ function ProfilePage() {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get("docker-alb-be-1546342436.us-west-2.elb.amazonaws.com:9090/user/profile", {
+        .get("http://docker-alb-be-1546342436.us-west-2.elb.amazonaws.com:9090/user/profile", {
           headers: {
             "Content-Type": "multipart/form-data",
             Authorization: `Bearer ${token}`,
@@ -44,8 +44,8 @@ function ProfilePage() {
           console.log(e);
         });
     };
-    fetchBlogs("docker-alb-be-1546342436.us-west-2.elb.amazonaws.com:9090/blogs", token);
-    fetchForums("docker-alb-be-1546342436.us-west-2.elb.amazonaws.com:9090/forums", token);
+    fetchBlogs("http://docker-alb-be-1546342436.us-west-2.elb.amazonaws.com:9090/blogs", token);
+    fetchForums("http://docker-alb-be-1546342436.us-west-2.elb.amazonaws.com:9090/forums", token);
     fetchData();
   }, [token, fetchBlogs, fetchForums]);
 
@@ -77,7 +77,7 @@ function ProfilePage() {
     data.append("username", profile?.username);
 
     await axios
-      .patch("docker-alb-be-1546342436.us-west-2.elb.amazonaws.com:9090/user/update-profile", data, {
+      .patch("http://docker-alb-be-1546342436.us-west-2.elb.amazonaws.com:9090/user/update-profile", data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
