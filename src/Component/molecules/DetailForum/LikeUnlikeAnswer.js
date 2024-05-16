@@ -13,7 +13,7 @@ function LikeUnlikeAnswer(props) {
   const handleLike = async () => {
     if (state?.status_like) {
       await axios
-        .delete(`http://internal-docker-alb-be-1192043214.us-west-2.elb.amazonaws.com:9090/like/forum/comment/${state?.id}`, {
+        .delete(`http://internal-docker-alb-be-1371739245.us-west-2.elb.amazonaws.com:9090/like/forum/comment/${state?.id}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${key}`,
@@ -32,7 +32,7 @@ function LikeUnlikeAnswer(props) {
     } else {
       await axios
         .post(
-          `http://internal-docker-alb-be-1192043214.us-west-2.elb.amazonaws.com:9090/like/forum/comment/${state?.id}`,
+          `http://internal-docker-alb-be-1371739245.us-west-2.elb.amazonaws.com:9090/like/forum/comment/${state?.id}`,
           {},
           {
             headers: {
