@@ -17,7 +17,7 @@ function DeleteComment(props) {
   const handleDelete = async () => {
     if (state?.userId === +idUser) {
       await axios
-        .delete(`http://internal-docker-alb-be-899080583.us-west-2.elb.amazonaws.com:9090/comments/${state?.id}`, {
+        .delete(`http://docker-alb-be-51362560.us-west-2.elb.amazonaws.com:9090/comments/${state?.id}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${key}`,
