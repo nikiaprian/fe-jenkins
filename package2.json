@@ -27,7 +27,7 @@
     "zustand": "^4.0.0-rc.1"
   },
   "scripts": {
-    "start": "HOST=0.0.0.0 DANGEROUSLY_DISABLE_HOST_CHECK=true GENERATE_SOURCEMAP=false react-scripts start",
+    "start": "GENERATE_SOURCEMAP=false react-scripts start",
     "css": "tailwindcss -i ./src/index.css -o ./src/output.css --watch",
     "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
