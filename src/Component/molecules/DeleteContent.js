@@ -24,7 +24,7 @@ function DeleteContent(props) {
   const handleDelete = async () => {
     if (props.type === "deleteForum" && state?.user?.id === +idUser) {
       await axios
-        .delete(`http://docker-alb-be-1545975187.us-west-2.elb.amazonaws.com:9090/forums/${state?.id}`, {
+        .delete(`http://internal-docker-alb-be-227459779.us-west-2.elb.amazonaws.com:9090/forums/${state?.id}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${key}`,
@@ -44,7 +44,7 @@ function DeleteContent(props) {
         });
     } else if (props?.type === "deleteBlog" && state?.user?.id === +idUser) {
       await axios
-        .delete(`http://docker-alb-be-1545975187.us-west-2.elb.amazonaws.com:9090/blogs/${state?.id}`, {
+        .delete(`http://internal-docker-alb-be-227459779.us-west-2.elb.amazonaws.com:9090/blogs/${state?.id}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${key}`,
