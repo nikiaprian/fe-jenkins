@@ -1,16 +1,15 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
-test('menampilkan tautan learn react', async () => {
-  await act(async () => {
-    render(
-      <MemoryRouter>
-        <App />
-      </MemoryRouter>
-    );
-  });
+test('menampilkan tombol Masuk di halaman Login', async () => {
+  render(
+    <MemoryRouter initialEntries={['/login']}>
+      <App />
+    </MemoryRouter>
+  );
 
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  // Menunggu komponen untuk memuat jika menggunakan React.lazy
+  const buttonElement = await screen.findByText(/Masuk/i);
+  expect(buttonElement).toBeInTheDocument();
 });
