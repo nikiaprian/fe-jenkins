@@ -10,6 +10,6 @@ test('menampilkan tombol Masuk di halaman Login', async () => {
   );
 
   // Menunggu komponen untuk memuat jika menggunakan React.lazy
-  const buttonElement = await screen.findByText(/Masuk/i);
+  const buttonElement = await screen.findByRole('button', { name: /masuk/i });
   expect(buttonElement).toBeInTheDocument();
 });
