@@ -1,12 +1,9 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import LoginPage from './Component/pages/LoginPage.js'; // Sesuaikan path ini dengan struktur folder Anda
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import App from './App';
 
-test('Tombol "Masuk" ada di halaman login', async () => {
-  render(<LoginPage />);
-
-  // Menunggu hingga komponen LoginPage dimuat
-  await waitFor(() => {
-    const buttonElement = screen.getByRole('button', { name: /masuk/i });
-    expect(buttonElement).toBeInTheDocument();
-  });
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
 });
