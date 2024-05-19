@@ -1,14 +1,12 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import App from './App';
+import LoginPage from '../LoginPage'; // Sesuaikan path ini dengan struktur folder Anda
 
-test('menampilkan tombol Masuk di halaman Login', async () => {
-  render(
-    <MemoryRouter initialEntries={['/login']}>
-      <App />
-    </MemoryRouter>
-  );
+test('Tombol "Masuk" ada di halaman login', async () => {
+  render(<LoginPage />);
 
-  // Menunggu komponen untuk memuat jika menggunakan React.lazy
-  await waitFor(() => expect(screen.getByRole('button', { name: /masuk/i })).toBeInTheDocument());
+  // Menunggu hingga komponen LoginPage dimuat
+  await waitFor(() => {
+    const buttonElement = screen.getByRole('button', { name: /masuk/i });
+    expect(buttonElement).toBeInTheDocument();
+  });
 });
