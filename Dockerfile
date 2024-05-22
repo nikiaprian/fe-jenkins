@@ -23,11 +23,11 @@ RUN npm ci --only=production
 # Menyalin kode aplikasi ke dalam kontainer
 COPY . .
 
-# Build aplikasi React.js
-RUN npm run build
-
 RUN rm package.json
 RUN mv package2.json package.json
+
+# Build aplikasi React.js
+RUN npm run build
 
 # Tahap 2: Menggunakan Nginx Alpine untuk menjalankan aplikasi React.js yang telah dibuild
 FROM nginx:alpine
