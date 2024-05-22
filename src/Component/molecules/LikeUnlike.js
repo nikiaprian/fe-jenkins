@@ -29,7 +29,7 @@ function LikeUnlike(props) {
     if (props?.type === "likeForum") {
       if (state?.is_you_like) {
         await axios
-          .delete(`http://docker-alb-be-1165324220.us-west-2.elb.amazonaws.com:9090/like/forum/${tempApi?.id}`, {
+          .delete(`http://internal-docker-alb-be-380843405.us-west-2.elb.amazonaws.com:9090/like/forum/${tempApi?.id}`, {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${key}`,
@@ -48,7 +48,7 @@ function LikeUnlike(props) {
       } else {
         await axios
           .post(
-            `http://docker-alb-be-1165324220.us-west-2.elb.amazonaws.com:9090/like/forum/${tempApi?.id}`,
+            `http://internal-docker-alb-be-380843405.us-west-2.elb.amazonaws.com:9090/like/forum/${tempApi?.id}`,
             {},
             {
               headers: {
@@ -71,7 +71,7 @@ function LikeUnlike(props) {
     } else if (props.type === "likeBlog") {
       if (state?.is_you_like) {
         await axios
-          .delete(`http://docker-alb-be-1165324220.us-west-2.elb.amazonaws.com:9090/like/blog/${tempApi?.id}`, {
+          .delete(`http://internal-docker-alb-be-380843405.us-west-2.elb.amazonaws.com:9090/like/blog/${tempApi?.id}`, {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${key}`,
@@ -90,7 +90,7 @@ function LikeUnlike(props) {
       } else {
         await axios
           .post(
-            `http://docker-alb-be-1165324220.us-west-2.elb.amazonaws.com:9090/like/blog/${tempApi?.id}`,
+            `http://internal-docker-alb-be-380843405.us-west-2.elb.amazonaws.com:9090/like/blog/${tempApi?.id}`,
             {},
             {
               headers: {
