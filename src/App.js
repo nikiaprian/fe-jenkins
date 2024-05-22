@@ -4,7 +4,7 @@ import './output.css';
 import Spiner from './Assets/Spinners/Spiner';
 
 //Routing
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import BrowserRouter
 import AboutPage from './Component/pages/AboutPage';
 import ProfilePage from './Component/pages/ProfilePage';
 import {
