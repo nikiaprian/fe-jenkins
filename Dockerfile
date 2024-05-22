@@ -36,7 +36,7 @@ FROM nginx:alpine
 RUN rm -rf /etc/nginx/conf.d/*
 
 # Menyalin konfigurasi Nginx yang disesuaikan
-COPY /nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Menyalin hasil build dari tahap sebelumnya ke direktori Nginx
 COPY --from=buildstage /app/build /usr/share/nginx/html
@@ -46,3 +46,4 @@ EXPOSE 80
 
 # Command untuk menjalankan Nginx dalam mode daemon
 CMD ["nginx", "-g", "daemon off;"]
+
