@@ -1,26 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './Component/pages/HomePage';
+import { render, waitFor, screen } from '@testing-library/react';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import { act } from 'react-dom/test-utils';
 
-function App() {
-  return (
-    <>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <React.Suspense fallback={<div>Loading...</div>}>
-              <HomePage />
-            </React.Suspense>
-          }
-        />
-        {/* routes lainnya */}
-      </Routes>
-    </>
-  );
-}
+test('renders homepage elements', async () => {
+  await act(async () => {
+    const { container, debug } = render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    );
 
-export default App;
+    // Print the entire container for debugging
+    debug(container);
+
+    // Check if the text "Website untuk membantu" is in the document
+    await waitFor(() => {
+      const element = screen.getByText(/Website untuk membantu/);
+      debug(element);  // Add this line
+      expect(element).toBeInTheDocument();
+    });
+  });
+});
 
 
 
