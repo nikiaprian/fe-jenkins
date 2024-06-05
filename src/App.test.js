@@ -12,15 +12,18 @@ test('renders homepage elements', async () => {
       </BrowserRouter>
     );
 
-    // Print the rendered container for debugging
+    // Print the entire container for debugging
     debug(container);
 
     // Check if the text "Website untuk membantu" is in the document
     await waitFor(() => {
-      expect(screen.getByText(/Website untuk membantu/)).toBeInTheDocument();
+      const element = screen.getByText(/Website untuk membantu/);
+      debug(element);  // Add this line
+      expect(element).toBeInTheDocument();
     });
   });
 });
+
 
 
 
