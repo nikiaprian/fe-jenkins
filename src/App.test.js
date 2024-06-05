@@ -1,28 +1,21 @@
 import React from 'react';
 import { render, waitFor, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
-import { act } from 'react-dom/test-utils';
+import HomePage from './Component/pages/HomePage.js';
 
 test('renders homepage elements', async () => {
-  await act(async () => {
-    const { container, debug } = render(
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    );
+  const { container, debug } = render(<HomePage />);
 
-    // Print the entire container for debugging
-    debug(container);
+  // Print the rendered container for debugging
+  debug(container);
 
-    // Check if the text "Website untuk membantu" is in the document
-    await waitFor(() => {
-      const element = screen.getByText(/Website untuk membantu/);
-      debug(element);  // Add this line
-      expect(element).toBeInTheDocument();
-    });
+  // Check if the text "Website untuk membantu" is in the document
+  await waitFor(() => {
+    const element = screen.getByText(/Website untuk membantu/);
+    debug(element);  // Add this line
+    expect(element).toBeInTheDocument();
   });
 });
+
 
 
 
