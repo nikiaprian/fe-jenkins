@@ -1,16 +1,19 @@
 import React from 'react';
-import { render, waitFor } from '@testing-library/react';
+import { render, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import { act } from 'react-dom/test-utils';
 
 test('renders homepage elements', async () => {
   await act(async () => {
-    const { getByText, getByAltText } = render(
+    const { getByText, getByAltText, queryByTestId } = render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
+
+    // Tunggu sampai elemen loading hilang
+    await waitForElementToBeRemoved(() => queryByTestId('three-circles-wrapper'));
 
     // Memastikan judul halaman muncul
     await waitFor(() => {
