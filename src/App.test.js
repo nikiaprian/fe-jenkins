@@ -6,7 +6,7 @@ import { act } from 'react-dom/test-utils';
 
 test('renders homepage elements', async () => {
   await act(async () => {
-    const { getByText, getByAltText, debug } = render(
+    const { getByText, getByAltText, queryByTestId, debug } = render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
@@ -14,6 +14,11 @@ test('renders homepage elements', async () => {
 
     // Print DOM for debugging
     debug();
+
+    // Tunggu sampai elemen loading hilang
+    await waitFor(() => {
+      expect(queryByTestId('three-circles-wrapper')).not.toBeInTheDocument();
+    });
 
     // Memastikan judul halaman muncul
     await waitFor(() => {
