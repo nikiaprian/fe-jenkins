@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, waitFor, screen } from '@testing-library/react';
-import HomePage from './Component/pages/HomePage.js';
+import HomePage from './Component/pages/HomePage';
 
 test('renders homepage elements', async () => {
   const { container, debug } = render(<HomePage />);
