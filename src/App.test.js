@@ -6,11 +6,14 @@ import { act } from 'react-dom/test-utils';
 
 test('renders homepage elements', async () => {
   await act(async () => {
-    const { getByText, getByAltText } = render(
+    const { getByText, getByAltText, debug } = render(
       <BrowserRouter>
         <App />
       </BrowserRouter>
     );
+
+    // Print DOM for debugging
+    debug();
 
     // Memastikan judul halaman muncul
     await waitFor(() => {
@@ -86,6 +89,7 @@ test('renders homepage elements', async () => {
     });
   });
 });
+
 
 
 
