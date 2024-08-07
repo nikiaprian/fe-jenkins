@@ -31,7 +31,7 @@ function CreateBlogPage() {
     inputTag.forEach((tag) => data.append("tags", tag?.text));
 
     await axios
-      .post("http://internal-docker-alb-be-380843405.us-west-2.elb.amazonaws.com:9090/blogs/new", data, {
+      .post("http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/blogs/new", data, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
