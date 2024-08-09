@@ -3,7 +3,7 @@ name: CI/CD and Lambda Execution
 on:
   push:
     branches:
-      - prods
+      - main
 
 jobs:
   build-and-push:
