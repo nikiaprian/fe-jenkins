@@ -5,8 +5,13 @@ import ScrollButton from './ScrollButton';
 test('renders ScrollButton component after scrolling', () => {
   render(<ScrollButton />);
 
-  // Simulate scroll event
-  fireEvent.scroll(window, { target: { scrollY: 400 } });
+  // Simulate scroll event and set scrollTop manually
+  Object.defineProperty(document.documentElement, 'scrollTop', {
+    value: 400,
+    writable: true,
+  });
+  
+  fireEvent.scroll(window);
 
   // Now, try to find the button
   const scrollButtonElement = document.querySelector('button');
