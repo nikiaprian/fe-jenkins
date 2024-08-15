@@ -6,6 +6,12 @@ import axios from "axios";
 import useAuthStore from "../store/AuthStore";
 import Swal from "sweetalert2";
 
+// Mocking `useNavigate` from 'react-router-dom'
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useNavigate: () => jest.fn(),
+}));
+
 jest.mock("axios");
 jest.mock("sweetalert2");
 
@@ -16,7 +22,7 @@ describe("Navbar Component", () => {
 
   beforeEach(() => {
     jest.resetAllMocks();
-    // Mocking `useNavigate`
+    // Mock `useNavigate` function
     jest.spyOn(require("react-router-dom"), "useNavigate").mockImplementation(() => mockNavigate);
   });
 
