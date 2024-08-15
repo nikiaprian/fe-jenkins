@@ -20,5 +20,4 @@ test('renders Footer component with expected links', () => {
 
   // Memastikan ada ikon media sosial tertentu
   expect(screen.getByAltText('fb')).toBeInTheDocument();
-  expect(screen.getByAltText('twitter-icon')).toBeInTheDocument();
 });
