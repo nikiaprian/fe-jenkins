@@ -27,3 +27,14 @@ test('calls input function when file is selected', () => {
   // Check if the input function was called with the file
   expect(mockInputFunction).toHaveBeenCalledWith(file);
 });
+
+// versi simpelnya
+// import React from 'react';
+// import { render } from '@testing-library/react';
+// import InputFile from './InputFile';
+
+// test('renders InputFile component', () => {
+//   render(<InputFile />);
+//   const inputElement = document.querySelector('input[type="file"]');
+//   expect(inputElement).toBeInTheDocument();
+// });
