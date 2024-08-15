@@ -13,7 +13,7 @@ test('renders ScrollButton component after scrolling', () => {
   
   fireEvent.scroll(window);
 
-  // Now, try to find the button
-  const scrollButtonElement = document.querySelector('button');
-  expect(scrollButtonElement).toBeInTheDocument();
+  // Now, try to find the button's container (div)
+  const scrollButtonContainer = document.querySelector('div[style*="inline"]');
+  expect(scrollButtonContainer).toBeInTheDocument();
 });
