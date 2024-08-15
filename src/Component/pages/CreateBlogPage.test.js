@@ -2,15 +2,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import CreateBlogPage from './CreateBlogPage';
 import { MemoryRouter } from 'react-router-dom';
 
-// Mocking axios and SweetAlert2
-jest.mock('axios', () => ({
-  post: jest.fn(() => Promise.resolve({ data: {} })),
-}));
-
-jest.mock('sweetalert2', () => ({
-  fire: jest.fn(),
-}));
-
 test('renders CreateBlogPage with all necessary components', () => {
   render(
     <MemoryRouter>
