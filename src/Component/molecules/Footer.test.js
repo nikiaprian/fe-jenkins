@@ -19,5 +19,5 @@ test('renders Footer component with expected links', () => {
   expect(screen.getByRole('link', { name: /Blog CodeIn/i })).toHaveAttribute('href', '/blog');
 
   // Memastikan ada ikon media sosial tertentu
-  expect(screen.getByAltText('fb')).toBeInTheDocument();
+  expect(screen.getByAltText('facebook')).toBeInTheDocument();
 });

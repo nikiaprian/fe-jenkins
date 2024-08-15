@@ -62,7 +62,7 @@ function Footer() {
                   <p className='inline-block text-base mb-2'>Lokasi:  West Tebet, Tebet, South Jakarta City, Jakarta</p>
                 </li>
                 <li className='flex flex-row mt-4'>
-                  <Link to='/'><img href='#' src={fb} alt='fb' className='w-7' /></Link>
+                  <Link to='/'><img href='#' src={fb} alt='facebook' className='w-7' /></Link>
                  <Link to="/"><img src={insta} alt='fb' className='w-7 ml-5' /></Link>
                  <Link to="/"><img src={twitter} alt='fb' className='w-7 ml-5' /></Link>
                  <Link to="/"><img src={linkedin} alt='fb' className='w-7 ml-5' /></Link>
