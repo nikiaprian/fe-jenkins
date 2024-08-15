@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import Button from './Button';
 
 test('renders Button component', () => {
-  render(<Button>Kirim</Button>);
+  render(<Button>Click Me</Button>);
   const buttonElement = screen.getByText(/Click Me/i);
   expect(buttonElement).toBeInTheDocument();
 });
