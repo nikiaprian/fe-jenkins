@@ -1,28 +1,37 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import CreateBlogPage from './CreateBlogPage';
-import '@testing-library/jest-dom/extend-expect'; // for additional matchers like toBeInTheDocument
+import { MemoryRouter } from 'react-router-dom';
 
-test('renders CreateBlogPage component', () => {
-  render(<CreateBlogPage />);
+// Mocking axios and SweetAlert2
+jest.mock('axios', () => ({
+  post: jest.fn(() => Promise.resolve({ data: {} })),
+}));
 
-  // Mengecek apakah InputJudul dirender
-  expect(screen.getByPlaceholderText(/Masukkan judul Blog/i)).toBeInTheDocument();
+jest.mock('sweetalert2', () => ({
+  fire: jest.fn(),
+}));
 
-  // Mengecek apakah InputTags dirender
-  expect(screen.getByText(/Tag/i)).toBeInTheDocument(); // atau teks lain yang relevan
-
-  // Mengecek apakah InputFile dirender
+test('renders CreateBlogPage with all necessary components', () => {
+  render(
+    <MemoryRouter>
+      <CreateBlogPage />
+    </MemoryRouter>
+  );
+  
+  // Memastikan elemen dengan teks yang benar ada
+  expect(screen.getByLabelText(/Judul Blog/i)).toBeInTheDocument();
+  expect(screen.getByLabelText(/Masukkan judul Blog/i)).toBeInTheDocument();
   expect(screen.getByText(/Upload Image Banner Blog/i)).toBeInTheDocument();
-
-  // Mengecek apakah InputMarkdown dirender
-  expect(screen.getByPlaceholderText(/Tulis deskripsi anda disini/i)).toBeInTheDocument();
-
-  // Mengecek apakah PreviewMarkdown dirender
-  expect(screen.getByText(/Preview Markdown/i)).toBeInTheDocument(); // atau teks lain yang relevan
-
-  // Mengecek apakah BackSubmit dirender
-  expect(screen.getByText(/Kembali dan Kirim/i)).toBeInTheDocument(); // atau teks lain yang relevan
-
-  // Mengecek apakah Navbar dirender
-  expect(screen.getByText(/Navbar/i)).toBeInTheDocument(); // Pastikan Navbar berisi teks ini
+  expect(screen.getByLabelText(/Deskripsi/i)).toBeInTheDocument();
+  
+  // Memastikan tombol Submit ada
+  expect(screen.getByRole('button', { name: /Submit/i })).toBeInTheDocument();
+  
+  // Memastikan input tags bekerja
+  const inputTag = screen.getByRole('textbox', { name: /Tags/i });
+  fireEvent.change(inputTag, { target: { value: 'Test Tag' } });
+  expect(inputTag.value).toBe('Test Tag');
+  
+  // Memastikan pratinjau markdown ada
+  expect(screen.getByText(/Preview/i)).toBeInTheDocument();
 });
