@@ -1,4 +1,5 @@
 module.exports = {
+    testEnvironment: 'jsdom',
     transformIgnorePatterns: [
       "node_modules/(?!(react-dnd|react-dnd-html5-backend|react-tag-input)/)"
     ],
@@ -6,7 +7,7 @@ module.exports = {
       "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
     },
     moduleNameMapper: {
-      '\\.(css|less|sass|scss)$': 'identity-obj-proxy', // Mock CSS imports
+      '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     },
   };
   
