@@ -36,7 +36,7 @@ const storeBlog = (set) => ({
 
   fetchSetComment: async (id) => {
     await axios
-      .get(`http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/comments/${id}`, {
+      .get(`http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/comments/${id}`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -53,7 +53,7 @@ const storeBlog = (set) => ({
 
   fetchCommentInput: async (id, data, token) => {
     await axios
-      .post(`http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/comments/${id}`, data, {
+      .post(`http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/comments/${id}`, data, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -88,7 +88,7 @@ const storeForum = (set) => ({
   answers: null || [],
   fetchForums: async (token) => {
     await axios
-      .get("http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/forums", {
+      .get("http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/forums", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -114,7 +114,7 @@ const storeForum = (set) => ({
 
   fetchsetAnswer: async (id, key) => {
     await axios
-      .get(`http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/commentsforum/${id}`, {
+      .get(`http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/commentsforum/${id}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${key}`,
@@ -132,7 +132,7 @@ const storeForum = (set) => ({
 
   fetchAnswerInput: async (id, data, token) => {
     await axios
-      .post(`http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/commentsforum/${id}`, data, {
+      .post(`http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/commentsforum/${id}`, data, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
