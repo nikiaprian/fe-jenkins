@@ -18,8 +18,8 @@ jobs:
       with:
         node-version: '14'
 
-    - name: Install Dependencies
-      run: npm install
+    # - name: Install Dependencies
+    #   run: npm install
 
     - name: Install Babel Jest and Dependencies
       run: npm install babel-core@7.0.0-bridge.0 --save-dev
