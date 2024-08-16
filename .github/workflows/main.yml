@@ -21,6 +21,9 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Install Babel Jest and Dependencies
+      run: npm install --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
+
     - name: Run Tests
       run: npm test -- --watchAll=false
 
