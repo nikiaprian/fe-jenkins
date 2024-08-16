@@ -3,6 +3,7 @@ import { HeartIcon as HeartIconOutline } from "@heroicons/react/outline";
 import { HeartIcon as HeartIconSolid } from "@heroicons/react/solid";
 import { useForumStore, useBlogStore } from "../store/ProductStore";
 import axios from "axios";
+
 function LikeUnlike(props) {
   const [state, setState] = useState({});
   let key = window.localStorage.getItem("ACCESS_KEY");
@@ -112,16 +113,17 @@ function LikeUnlike(props) {
       }
     }
   };
+
   return (
     <>
       {state?.is_you_like ? (
         <div className="flex items-center gap-2">
-          <HeartIconSolid className="h-6 w-6 text-red-500 cursor-pointer" onClick={key && handleLike} />
+          <HeartIconSolid data-testid="heart-solid" className="h-6 w-6 text-red-500 cursor-pointer" onClick={key && handleLike} />
           <p className="text-base wl-8 font-medium font-poppins">{state?.total_likes}</p>
         </div>
       ) : (
         <div className="flex items-center gap-2">
-          <HeartIconOutline className="h-6 w-6 text-red-500 cursor-pointer" onClick={key && handleLike} />
+          <HeartIconOutline data-testid="heart-outline" className="h-6 w-6 text-red-500 cursor-pointer" onClick={key && handleLike} />
           <p className="text-base wl-8 font-medium font-poppins">{state?.total_likes}</p>
         </div>
       )}
