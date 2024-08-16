@@ -3,7 +3,6 @@ import { HeartIcon as HeartIconOutline } from "@heroicons/react/outline";
 import { HeartIcon as HeartIconSolid } from "@heroicons/react/solid";
 import { useForumStore, useBlogStore } from "../store/ProductStore";
 import axios from "axios";
-
 function LikeUnlike(props) {
   const [state, setState] = useState({});
   let key = window.localStorage.getItem("ACCESS_KEY");
@@ -30,7 +29,7 @@ function LikeUnlike(props) {
     if (props?.type === "likeForum") {
       if (state?.is_you_like) {
         await axios
-          .delete(`http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/like/forum/${tempApi?.id}`, {
+          .delete(`http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/like/forum/${tempApi?.id}`, {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${key}`,
@@ -49,7 +48,7 @@ function LikeUnlike(props) {
       } else {
         await axios
           .post(
-            `http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/like/forum/${tempApi?.id}`,
+            `http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/like/forum/${tempApi?.id}`,
             {},
             {
               headers: {
@@ -72,7 +71,7 @@ function LikeUnlike(props) {
     } else if (props.type === "likeBlog") {
       if (state?.is_you_like) {
         await axios
-          .delete(`http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/like/blog/${tempApi?.id}`, {
+          .delete(`http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/like/blog/${tempApi?.id}`, {
             headers: {
               "Content-Type": "application/json",
               Authorization: `Bearer ${key}`,
@@ -91,7 +90,7 @@ function LikeUnlike(props) {
       } else {
         await axios
           .post(
-            `http://docker-alb-be-1593259606.us-west-2.elb.amazonaws.com:9090/like/blog/${tempApi?.id}`,
+            `http://docker-alb-be-2139963268.us-west-2.elb.amazonaws.com:9090/like/blog/${tempApi?.id}`,
             {},
             {
               headers: {
@@ -113,17 +112,16 @@ function LikeUnlike(props) {
       }
     }
   };
-
   return (
     <>
       {state?.is_you_like ? (
         <div className="flex items-center gap-2">
-          <HeartIconSolid data-testid="heart-solid" className="h-6 w-6 text-red-500 cursor-pointer" onClick={key && handleLike} />
+          <HeartIconSolid className="h-6 w-6 text-red-500 cursor-pointer" onClick={key && handleLike} />
           <p className="text-base wl-8 font-medium font-poppins">{state?.total_likes}</p>
         </div>
       ) : (
         <div className="flex items-center gap-2">
-          <HeartIconOutline data-testid="heart-outline" className="h-6 w-6 text-red-500 cursor-pointer" onClick={key && handleLike} />
+          <HeartIconOutline className="h-6 w-6 text-red-500 cursor-pointer" onClick={key && handleLike} />
           <p className="text-base wl-8 font-medium font-poppins">{state?.total_likes}</p>
         </div>
       )}
