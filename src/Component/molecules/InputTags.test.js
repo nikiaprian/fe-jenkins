@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import InputTag from './InputTag';
+import InputTags from './InputTags';
 import { KEYIT } from '../../Assets/keyTag/key';
 
 // Mock the key tags
