@@ -27,6 +27,8 @@ jobs:
     - name: Install --save-dev identity-obj-proxy
       run: npm install --save-dev identity-obj-proxy
 
+    - name: Install --save-dev identity-obj-proxy
+      run: npm install --save-dev esbuild-jest
 
     - name: Run Tests
       run: npm test -- --watchAll=false
