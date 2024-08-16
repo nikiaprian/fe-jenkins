@@ -1,5 +1,3 @@
-// src/Component/molecules/PreviewMarkdown.test.js
-
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect'; // untuk matchers seperti toBeInTheDocument
@@ -13,11 +11,9 @@ describe('PreviewMarkdown Component', () => {
     render(<PreviewMarkdown editorState={htmlContent} />);
     
     // Verify that the content is rendered correctly
-    const renderedContent = screen.getByText('This is a test content.');
-    expect(renderedContent).toBeInTheDocument();
-    
-    const strongText = screen.getByText('test');
-    expect(strongText).toHaveClass('font-bold');
+    const previewContainer = screen.getByTestId('preview-content');
+    expect(previewContainer).toHaveTextContent('This is a test content.');
+    expect(previewContainer.querySelector('strong')).toHaveTextContent('test');
   });
 
   test('renders without crashing when editorState is empty', () => {
@@ -25,11 +21,10 @@ describe('PreviewMarkdown Component', () => {
     render(<PreviewMarkdown editorState="" />);
     
     // Verify that the container is rendered
-    const previewContainer = screen.getByText('Preview');
+    const previewContainer = screen.getByTestId('preview-content');
     expect(previewContainer).toBeInTheDocument();
     
     // Ensure no content is rendered
-    const noContent = screen.queryByText('Preview');
-    expect(noContent).toBeInTheDocument();
+    expect(previewContainer).toBeEmptyDOMElement();
   });
 });
