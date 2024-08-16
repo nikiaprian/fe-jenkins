@@ -23,6 +23,8 @@ jobs:
 
     - name: Install Babel Jest and Dependencies
       run: npm install --save-dev babel-jest @babel/core @babel/preset-env @babel/preset-react
+      run: npm install --save-dev identity-obj-proxy
+
 
     - name: Run Tests
       run: npm test -- --watchAll=false
