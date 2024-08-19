@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import HomePage from './HomePage'; // sesuaikan path dengan lokasi file Anda
+import HomePage from '../molecules/HomePage'; // sesuaikan path dengan lokasi file Anda
 
 // Mock komponen-komponen yang digunakan di dalam HomePage
 jest.mock('../atoms/ScrollButton', () => () => <div>ScrollButton</div>);
