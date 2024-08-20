@@ -45,24 +45,24 @@ jobs:
     - name: Push to Docker Hub
       run: docker push nikiaprian/frontend:latest
 
-    # - name: Update apt repositories
-    #   run: sudo apt-get update
+    - name: Update apt repositories
+      run: sudo apt-get update
 
-    # - name: Install AWS CLI
-    #   run: sudo apt-get install -y awscli
+    - name: Install AWS CLI
+      run: sudo apt-get install -y awscli
 
-    # - name: Configure AWS Credentials
-    #   run: |
-    #     aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-    #     aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-    #     aws configure set default.region ${{ secrets.AWS_DEFAULT_REGION }}
+    - name: Configure AWS Credentials
+      run: |
+        aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws configure set default.region ${{ secrets.AWS_DEFAULT_REGION }}
 
-    # - name: Install Dependencies for Lambda Execution
-    #   run: sudo apt-get install -y --fix-missing python3-pil
+    - name: Install Dependencies for Lambda Execution
+      run: sudo apt-get install -y --fix-missing python3-pil
 
-    # - name: Execute Lambda Function
-    #   env:
-    #     LAMBDA_FUNCTION_NAME: ${{ secrets.LAMBDA_FUNCTION_NAME }}
-    #   run: |
-    #     aws lambda invoke --function-name $LAMBDA_FUNCTION_NAME --payload '{}' output.txt --cli-read-timeout 300
-    #     cat output.txt
+    - name: Execute Lambda Function
+      env:
+        LAMBDA_FUNCTION_NAME: ${{ secrets.LAMBDA_FUNCTION_NAME }}
+      run: |
+        aws lambda invoke --function-name $LAMBDA_FUNCTION_NAME --payload '{}' output.txt --cli-read-timeout 300
+        cat output.txt
