@@ -31,7 +31,7 @@ jobs:
       run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
     - name: Push to Docker Hub
-      run: docker push nikiaprian/frontend:latest
+      run: docker push nikiaprian/frontend:test
 
     # - name: Update apt repositories
     #   run: sudo apt-get update
