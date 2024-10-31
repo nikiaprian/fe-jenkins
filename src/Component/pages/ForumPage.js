@@ -19,8 +19,8 @@ function ForumPage() {
         <Navbar />
         <div className=" mt-40 w-10/12 md:w-8/12 mx-auto flex flex-col gap-4">
           <Head
-            titleHead="Code ForumIn"
-            contentHead="Tempat berkomunikasi para programmer dengan cara mengajukan dan menjawab sebuah pertanyaan"
+            titleHead="CForumIn"
+            contentHead="Tempat mengajukan dan menjawab sebuah pertanyaan"
             nameButton="Buat Pertanyaan"
             path="/forum/createforum"
             setFilter={setFilter}
