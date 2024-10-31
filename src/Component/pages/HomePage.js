@@ -23,9 +23,9 @@ function HomePage() {
         <div data-aos="fade-up" data-aos-offset="200" data-aos-delay="500" className=" bg-gradient-to-b from-[#233A5A] to-[#111924] py-20 px-10 mt-16 w-full lg:px-32 lg:py-16 flex flex-col items-center md:justify-around md:flex-row">
           <div className=" flex flex-col items-start gap-5 text-center md:text-left">
             <p className="text-white font-quicksand text-5xl font-bold leading-tight" data-aos="fade-right" data-aos-offset="200" data-aos-delay="500">
-              Situs untuk membantu{' '}
-              <span className="text-red-500">Teman-Teman</span> mencari 
-              solusi👋
+              Website untuk membantu{' '}
+              <span className="text-red-500">Programmer</span> menjadi lebih
+              baik👋
             </p>
             <p data-aos="fade-right" data-aos-offset="200" data-aos-delay="600" className="text-gray-400 text-xl md:max-w-5xl font-poppins">
               Platform ini dibuat untuk memberikan kemudahan bagi Programmer
